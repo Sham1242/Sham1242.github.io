@@ -11,10 +11,10 @@ body {
 }
 
 #logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5%;
 }
 
 .centered {
@@ -29,7 +29,24 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 48px;
   opacity: 0;
+
   animation: fade-in 2s ease-in-out forwards;
+  padding-bottom: 10px;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fff8f0; /* Off white background */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fade-in {
@@ -38,6 +55,20 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .box {
+    grid-template-columns: 1fr; /* Stacks items on top of each other */
+    padding: 50px; /* Reduced horizontal padding */
+  }
+  #logo {
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: center;
   }
 }
 
